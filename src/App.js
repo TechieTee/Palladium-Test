@@ -1,9 +1,9 @@
 import React from "react";
 import './App.css';
-import Header from "./Header";
-import Product from "./Product";
-import Footer from "./Footer";
-import productData from "./productData";
+import Header from "./components/Header";
+import Product from "./components/Product";
+import Footer from "./components/Footer";
+import productData from "./components/productData";
 
 
 export default function App() {
