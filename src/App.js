@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Header from "./Header";
+import Product from "./Product";
+import Footer from "./Footer";
+import productData from "./productData";
 
-function App() {
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {productData.map((item) => (
+        <Product
+          key={item.id}
+           important={item.status === "paid" ? "green" : "red"}
+          name={item.name}
+          type={item.type}
+          desc={item.desc}
+          status={item.status}
+          dateCreated={item.dateCreated}
+        
+        />
+      ))}
+      <Footer />
     </div>
   );
 }
-
-export default App;
